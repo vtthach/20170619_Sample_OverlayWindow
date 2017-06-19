@@ -1,0 +1,5 @@
+<resources>
+    <string name="cbsa_toast_dismiss">DISMISS</string>
+    <string name="cbsa_toast_add">ADD</string>
+    <string name="notification_message">Unfortunately there is no email listed.\nPlease add your email under profile management</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="NotificationAnim">
+        <item name="android:windowEnterAnimation">@anim/cbsa_notification_enter</item>
+        <item name="android:windowExitAnimation">@anim/cbsa_notification_exit</item>
+    </style>
+</resources>
