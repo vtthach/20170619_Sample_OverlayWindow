@@ -1,0 +1,156 @@
+// Common dependencies - version : 1.1
+// Upgrade rxJava 1 to rxJava 2
+// supportLibraryVersion to 25.0.2
+// dagger to 2.9
+// TODO refactor utilDependencies
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "26.0.2"
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 25 // Target > 26 will cause a crash with Window type toast notify -> need find another solution
+    androidCompileSdkVersion = 27
+
+    // Java version
+    javaVersion = JavaVersion.VERSION_1_8
+
+    // Support library version
+    supportLibraryVersion = '26.0.1'
+
+    // Play service version
+    playServiceVersion = "11.2.0"
+
+    // Dagger 2
+    daggerVersion = '2.9'
+
+    butterKnifeVersion = '8.6.0'
+
+    // Rx android
+    rxAndroidVersion = '2.0.1'
+    rxJavaVersion = '2.1.0'
+
+    // Annotation processor
+    javaxAnnotationVersion = '1.0'
+
+    androidAnnotationsVersion = '23.1.1'
+
+    gsonVersion = '2.7'
+
+
+
+    okHttpVersion = '3.8.1'
+    retrofitVersion = '2.3.0'
+    retrofitRxjavaVersion = '2.3.0'
+
+    materialDialogVersion = '0.9.4.5'
+    timberVersion = '4.5.1'
+    caligraphyVersion = '2.2.0'
+    parcelerVersion = '1.1.5'
+    immutablesVersion = "2.4.3"
+
+    //Testing
+    jUnitVersion = '4.12'
+    assertJVersion = '1.7.1'
+    mockitoVersion = '1.10.19'
+    dexmakerVersion = '1.4'
+    robolectricVersion = '3.0'
+    testingSupportLibVersion = '0.1'
+    testRunnerVersion = '0.4'
+    hamcrestVersion = '1.1'
+
+    glideVersion = '4.0.0'
+
+    imageLoaders = [
+            glide        : "com.github.bumptech.glide:glide:${glideVersion}",
+            glideCompiler: "com.github.bumptech.glide:compiler:${glideVersion}"
+    ]
+
+    utilDependencies = [
+            cardViewV7           : "com.android.support:cardview-v7:${supportLibraryVersion}",
+            appcompatV7          : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+            supportDesignLibrary : "com.android.support:design:${supportLibraryVersion}",
+            recyclerView         : "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+            androidAnnotations   : "com.android.support:support-annotations:${androidAnnotationsVersion}",
+            percent              : "com.android.support:percent:${supportLibraryVersion}",
+            constraintLayout     : "com.android.support.constraint:constraint-layout:1.0.2",
+
+            caligraphy           : "uk.co.chrisjenx:calligraphy:${caligraphyVersion}",
+
+            rxAndroid            : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            rxJava               : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+
+            javaxAnnotation      : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+
+            retrofit             : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitJsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitRxjava       : "com.squareup.retrofit2:adapter-rxjava2:${retrofitRxjavaVersion}",
+            okHttp               : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okHttpInterceptor    : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+
+            gson                 : "com.google.code.gson:gson:${gsonVersion}",
+
+            parceler             : "org.parceler:parceler-api:${parcelerVersion}",
+            parcelerCompiler     : "org.parceler:parceler:${parcelerVersion}",
+
+            // dagger 2
+            daggerCompiler       : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger               : "com.google.dagger:dagger:${daggerVersion}",
+
+            butterKnife          : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler  : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+
+            timber               : "com.jakewharton.timber:timber:${timberVersion}",
+
+            materialDialog       : "com.afollestad.material-dialogs:core:${materialDialogVersion}",
+            crashlytics          : "com.crashlytics.sdk.android:crashlytics:2.5.7@aar",
+            tooltip              : "com.venmo.view.tooltip:tooltip:0.1.2@aar",
+            stringUtils          : 'org.apache.commons:commons-lang3:3.4',
+            circleIndicator      : "me.relex:circleindicator:1.2.1@aar",
+
+            stickyHeaderSLiM     : "com.tonicartos:superslim:0.4.13",
+            iosswitch            : "com.7heaven.ioswidget:iosswitch:0.6",
+            glide                : "com.github.bumptech.glide:glide:${glideVersion}",
+
+            slf4jApi             : "org.slf4j:slf4j-api:1.7.22",
+            slf4jSimple          : "org.slf4j:slf4j-simple:1.7.22",
+
+            achilles             : "dmt:achilles:0.2.5-SNAPSHOT",
+
+            immutables           : "org.immutables:value:${immutablesVersion}",
+            immutablesBuilder    : "org.immutables:builder:${immutablesVersion}",
+            guava                : "com.google.guava:guava:22.0-android"
+    ]
+
+    playServiceDepedencies = [
+            map                : "com.google.android.gms:play-services-maps:${playServiceVersion}",
+            locationApi        : "com.google.android.gms:play-services-location:${playServiceVersion}",
+            visionPlayService  : "com.google.android.gms:play-services-vision:${playServiceVersion}",
+            analyticPlayService: "com.google.android.gms:play-services-analytics:${playServiceVersion}",
+            firebaseAuth       : "com.google.firebase:firebase-auth:${playServiceVersion}",
+            playServicesAuth   : "com.google.android.gms:play-services-auth:${playServiceVersion}",
+            firebaseDatabase   : "com.google.firebase:firebase-database:${playServiceVersion}"
+    ]
+
+    testDependencies = [
+            junit              : "junit:junit:${jUnitVersion}",
+            mockito            : "org.mockito:mockito-core:${mockitoVersion}",
+            powermockJunit     : "org.powermock:powermock-module-junit4:1.6.5",
+            powermockMockito   : "org.powermock:powermock-api-mockito:1.6.6",
+            assertj            : "org.assertj:assertj-core:${assertJVersion}",
+            robolectric        : "org.robolectric:robolectric:${robolectricVersion}",
+
+            testingSupportLib  : "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",
+            dexmaker           : "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerMockito    : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+
+            hamcrestCore       : "org.hamcrest:hamcrest-core:${hamcrestVersion}",
+            hamcrestLibrary    : "org.hamcrest:hamcrest-library:${hamcrestVersion}",
+            hamcrestIntegration: "org.hamcrest:hamcrest-integration:${hamcrestVersion}",
+    ]
+}
